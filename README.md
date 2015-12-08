@@ -1,2 +1,4 @@
 # PyFP
-Python Functional Programming
+
+Code examples from the book "Python Functional Programming" by Steven Lott
+
