@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+	<Document>
+		<Folder>
+			<Placemark>
+				<name>Location I</name>
+				<description>11 May 2011, found nothing</description>
+				<Point>
+					<coordinates>143.2641,-36.6549,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Location II</name>
+				<description>17 May 2011, found treasure</description>
+				<Point>
+					<coordinates>143.253,-36.6632,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Location III</name>
+				<description>25 May 2011, found treasure</description>
+				<Point>
+					<coordinates>143.2891,-36.6894,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Location IV</name>
+				<description>6 June 2011, found nothing</description>
+				<Point>
+					<coordinates>143.2828,-36.6899,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Location V</name>
+				<description>15 June 2011, found treasure</description>
+				<Point>
+					<coordinates>143.2344,-36.6907,0</coordinates>
+				</Point>
+			</Placemark>
+			<Placemark>
+				<name>Location VI</name>
+				<description>29 June 2011, found nothing</description>
+				<Point>
+					<coordinates>143.23,-36.6875,0</coordinates>
+				</Point>
+			</Placemark>
+		</Folder>
+	</Document>
+</kml>
