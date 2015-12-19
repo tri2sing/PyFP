@@ -42,10 +42,17 @@ def latitude_longitude_iterator(row_iterator):
     # Use tuple unpacking (*row) for the row to get the three values
     return (latitude_longitude_filter(*row) for row in row_iterator)
 
+def lat_lon_float_iterator(lat_lon_itr):
+    return ((float(lat), float(lon)) for lat, lon in lat_lon_itr)
         
 def main():
     with open('locations.xml') as source:
-        coordinates = latitude_longitude_iterator(xml_tree_to_row_iterator(source))
+        coordinates = \
+                    lat_lon_float_iterator(
+                        latitude_longitude_iterator(
+                            xml_tree_to_row_iterator(source)
+                        )
+                    )
         for coordinate in coordinates:
             print(coordinate)
 

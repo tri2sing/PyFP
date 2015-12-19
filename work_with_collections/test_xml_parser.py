@@ -8,8 +8,9 @@ import os
 import urllib.request
 
 from work_with_collections.xml_parser import\
-     xml_tree_to_row_iterator,\
-     latitude_longitude_iterator
+    xml_tree_to_row_iterator,\
+    latitude_longitude_iterator,\
+    lat_lon_float_iterator
 
 def test_xml_tree_to_row_iterator():
     with open(os.getcwd() + '/work_with_collections/locations.xml') as source:
@@ -21,5 +22,12 @@ def test_latitude_longitude_iterator():
     # Demonstrates use of an alternate function to open the file while reusing the iterators as-is.
     with urllib.request.urlopen('file:' + os.getcwd() + '/work_with_collections/locations.xml') as source:
         rows = tuple(latitude_longitude_iterator(xml_tree_to_row_iterator(source)))
+        assert(len(rows) == 6)
+        assert(len(rows[0]) == 2)
+
+def test_lat_lon_float_iterator():
+    # Demonstrates use of an alternate function to open the file while reusing the iterators as-is.
+    with urllib.request.urlopen('file:' + os.getcwd() + '/work_with_collections/locations.xml') as source:
+        rows = tuple(lat_lon_float_iterator(latitude_longitude_iterator(xml_tree_to_row_iterator(source))))
         assert(len(rows) == 6)
         assert(len(rows[0]) == 2)
