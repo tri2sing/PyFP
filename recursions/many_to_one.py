@@ -26,7 +26,7 @@ def recursive_product_iterable(interable):
 
 def tco_product_iterable(iterable):
     '''A tail-call optimization for the recursive functions shown above.
-    This is a fold-left reduction.
+    This is a fold-left reduction: the operators are folded into the iterable left-to-right.
     '''    
     prod = 1
     for item in iterable:
