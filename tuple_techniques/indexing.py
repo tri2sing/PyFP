@@ -4,6 +4,7 @@ Created on Jan 5, 2016
 @author: Sameer Adhikari
 '''
 
+from collections import namedtuple
 
 # To access elements in tuples requires working with indexes. 
 # Consider the following constructs: segment, point, dimension.
@@ -46,6 +47,23 @@ print('='*80)
 print('Approach 3')
 print('end point x coordinate using tuple unpacking xdim(*point) = {}'.format(xdim(*point2)))
 print('segment start point y coordinate using tuple unpacking ydim(*point(*segment) = {}'.format(ydim(*start(*segmt1))))
+
+# Another approach is to use a namedtuple instead of a regular tuple.
+# The namedtuple allows us to use suffix notation to access specific attributes.
+# Visually the suffix notation does not mesh with the FP style as well as the prefix notation.
+# As this is an example, primarily for demonstration, we will redefine the variables.
+
+Point = namedtuple('Point', ('xdim', 'ydim'))
+Segment = namedtuple('Segment', ('start', 'end'))
+point1 = Point(3, 8)
+point2 = Point(10, 5)
+segmt1 = Segment(point1, point2)
+
+print('='*80)
+print('Approach 3')
+print('end point x coordinate using namedtuple point.xdim = {}'.format(point2.xdim))
+print('segment start point y coordinate using namedtuple segement.start.ydim = {}'.format(segmt1.start.ydim))
+
 
 
 print('='*80)
