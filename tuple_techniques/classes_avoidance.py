@@ -9,6 +9,12 @@ from collections import defaultdict
 # In some cases, with the use of a bunch of tuples we can avoid the use of classes.
 # The reason to avoid classes it that classes have to maintain state.
 # Consider the process of assigning ranks to a sequence using a ranking function.
+# The goal is to rank each item along multiple dimensions.
+
+def rank_nested_simple(data, key_function=lambda obj:obj):
+    '''Returns nested tuple when ranking along multiple dimensions.
+    It does not handle ties as expected in statistical measures.'''
+    return (enumerate(sorted(data, key=key_function)))
 
 def rank(data, key_function=lambda obj:obj):
     '''Return a generator with the rank of the data items.
