@@ -26,3 +26,6 @@ def divisible_by_n(limit, n):
     matches = zip(range(limit + 1), cycle_n)
     return (num for num, match in matches if match == True)
     
+    
+# I could not think of a suitable example to use repeat().
+# The example in the book seemed very contrived.
